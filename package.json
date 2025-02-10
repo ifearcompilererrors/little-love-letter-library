@@ -1,26 +1,29 @@
 {
-  "name": "little-love-letter-library",
-  "version": "0.1.0",
+  "name": "little-love-letters-library",
+  "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:3001/",
+  "main": "index.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "start:server": "nodemon index.js --watch index.js server/*",
+    "start:client": "BROWSER=none react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\" --kill-others",
+    "start": "node index.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "googleapis": "^144.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "babel-core": "^6.26.3",
+    "express": "^4.21.2",
+    "googleapis": "^144.0.0"
   },
   "browserslist": {
     "production": [
