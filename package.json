@@ -2,7 +2,7 @@
   "name": "little-love-letters-library",
   "version": "0.0.1",
   "private": true,
-  "proxy": "http://127.0.0.1:3001/",
+  "proxy": "http://localhost:3001/",
   "main": "index.js",
   "scripts": {
     "build": "react-scripts build",
