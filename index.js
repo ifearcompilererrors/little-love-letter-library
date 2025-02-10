@@ -7,7 +7,6 @@ import { getAuthToken } from './server/sheetsService.js';
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-console.log('>>>', __dirname)
 
 app.use(bodyParser.json());
 
