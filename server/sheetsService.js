@@ -18,7 +18,7 @@ export async function getAuthToken() {
     const authToken = await auth.getClient();
     return authToken;
   } catch (e) {
-    console.log('Failed to get google auth token.')
+    console.error('Failed to get google auth token.')
     throw e;
   }
 }
@@ -35,14 +35,13 @@ export async function getSheetValues({ auth }) {
     
     return values;
   } catch (e) {
-    console.log('Failed to get sheet values.')
+    console.error('Failed to get sheet values.')
     throw e;
   }
 }
 
 export async function appendSheetValues({ auth, data }) {
   const resource = { values: [[data]] };
-  console.log('appending values to sheet:', resource);
   try {
     const data = await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
@@ -53,7 +52,7 @@ export async function appendSheetValues({ auth, data }) {
     });
     return data.config.data.values;
   } catch (e) {
-    console.log('Failed to append sheet values.')
+    console.error('Failed to append sheet values.')
     throw e;
   }
 }

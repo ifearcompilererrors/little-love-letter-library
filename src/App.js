@@ -29,12 +29,12 @@ const fetchSubmissions = async () => {
 
 function App() {
   const inputRef = useRef();
-  const loadingRef = useRef();
+  const loadingRef = useRef(false);
   const [allSubmissions, setAllSubmissions] = useState(null);
 
   // fetch gallery of submissions on component load
   useEffect(() => {
-    if(loadingRef.current) return;
+    if (loadingRef.current || allSubmissions !== null) return;
 
     const asyncFetchSubmissions = async () => {
       try {
