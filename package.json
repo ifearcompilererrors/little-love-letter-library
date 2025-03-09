@@ -12,7 +12,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run start:server\" \"npm run start:client\" --kill-others",
     "local": "ENVIRONMENT=development npm run dev",
-    "start": "node index.js"
+    "start": "npm run start:server"
   },
   "type": "module",
   "devDependencies": {
