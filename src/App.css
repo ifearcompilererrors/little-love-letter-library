@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Monsieur+La+Doulaise&display=swap');
+
+.monsieur-la-doulaise-regular {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+    --background: '#f7eeed';
+    --primary: '#f4bbc9';
+    --almond: "e5cdc8"
+}
+
+.love-letter-library {
+    background-color: #f7eeed;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.headline {
+    margin-top: -.5rem;
+     @media (min-width: 1000px) {
+       font-size: 5rem;
+   }
+}
+
+.subhead {
+    margin-top: -5vh;
+    font-weight: 300;
+    @media (min-width: 1000px) {
+       max-width: 35vw;
+   }
+}
+
+.accent {
+    position: absolute;
+    bottom: 5vh;
+    right: 0.5vw;
+    z-index: 4;
+}
+
+.submit-form-container {
+   background-color: #ffe1ea;
+   padding: 5vw;
+  
+   @media (min-width: 1000px) {
+       width: 35vw;
+   }
+}
+
+.submit-form {
+    @media (min-width: 1000px) {
+       width: 35vw;
+   }
+    position: absolute;
+    top: 45%;  
+    transform: translateY(-50%);
+}
+
+.input {
+    width: -webkit-fill-available;
+    margin-right: 5vw;
+    border: #f7eeed;
+    height: 4vh;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.button {
+    margin-top: 2vh;
+    font-size: 1rem;
+    background-color: #d7a6b3;
+    border: #d7a6b3;
+    padding: 1vh;
+    border-radius: 5px;
+}
+
+.button:hover {
+   background-color: #fff;
+}
+
+.love-letter-container {
+    
+    padding: 3vh;
+    margin: 8vh 3vw;
+    border-radius: 10px;
+    box-shadow: 10px 10px 100px #f4bbc9;
+}
+
+/* footer */
+.footer {
+   background-color: #d7a6b3;
+   display: flex;
+   justify-content: space-between;
+   position: fixed;
+   width: 97.5vw;
+   bottom: 0;
+   padding:  4px 18px;
+}

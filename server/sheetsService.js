@@ -1,24 +1,24 @@
-import { google } from 'googleapis';
+import { google } from "googleapis";
 
-const sheets = google.sheets('v4');
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
-const SPREADSHEET_ID = '1PIfNRjN58hxDGa3O8SrGKrM72n8ybPaHCcqPFZhgl1c';
-const SHEET_NAME = 'Sheet1';
+const sheets = google.sheets("v4");
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const SPREADSHEET_ID = "1PIfNRjN58hxDGa3O8SrGKrM72n8ybPaHCcqPFZhgl1c";
+const SHEET_NAME = "Sheet1";
 
 export async function getAuthToken() {
   try {
     const opts = {
-      scopes: SCOPES
-    }
+      scopes: SCOPES,
+    };
 
-    if (process.env.ENVIRONMENT === 'development')
-      opts.keyFile = './creds.json'
+    if (process.env.ENVIRONMENT === "development")
+      opts.keyFile = "./creds.json";
 
     const auth = new google.auth.GoogleAuth(opts);
     const authToken = await auth.getClient();
     return authToken;
   } catch (e) {
-    console.error('Failed to get google auth token.')
+    console.error("Failed to get google auth token.");
     throw e;
   }
 }
@@ -31,11 +31,11 @@ export async function getSheetValues({ auth }) {
       range: SHEET_NAME,
     });
 
-    const values = data.values.map(([value]) => value)
-    
+    const values = data.values.map(([value]) => value);
+
     return values;
   } catch (e) {
-    console.error('Failed to get sheet values.')
+    console.error("Failed to get sheet values.");
     throw e;
   }
 }
@@ -48,11 +48,11 @@ export async function appendSheetValues({ auth, data }) {
       auth,
       range: SHEET_NAME,
       resource,
-      valueInputOption: 'RAW',
+      valueInputOption: "RAW",
     });
     return data.config.data.values;
   } catch (e) {
-    console.error('Failed to append sheet values.')
+    console.error("Failed to append sheet values.");
     throw e;
   }
 }
